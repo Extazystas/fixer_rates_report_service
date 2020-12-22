@@ -1,4 +1,3 @@
 class ReportsUploader
-  def call
-  end
+  def call; end
 end
