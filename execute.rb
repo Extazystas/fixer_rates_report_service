@@ -1,8 +1,8 @@
 BASE_PATH = './lib'.freeze
 
-Dir["#{BASE_PATH}/services/*.rb"].each   { |file| require_relative file }
-Dir["#{BASE_PATH}/formatters/*.rb"].each { |file| require_relative file }
-Dir["#{BASE_PATH}/config/*.rb"].each     { |file| require_relative file }
+%w[services formatters config uploaders].each do |dir|
+  Dir["#{BASE_PATH}/#{dir}/*.rb"].each { |file| require_relative file }
+end
 
 begin
   require 'anyway_config'
