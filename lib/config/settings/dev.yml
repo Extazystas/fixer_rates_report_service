@@ -1,0 +1,6 @@
+s3_enabled: true
+gcs_enabled: true
+html_format: true
+xls_format: true
+json_format: true
+csv_format: true
