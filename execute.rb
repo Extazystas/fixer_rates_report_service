@@ -22,5 +22,6 @@ end
 
 Anyway::Settings.default_config_path = ->(name) { "#{BASE_PATH}/config/settings/#{name}.yml" }
 
-ReportsGenerator.new.call
+rates_info = RatesFetcher.call
+ReportsGenerator.new(rates_info).call
 ReportsUploader.new.call if ENV['RACK_ENV'] == 'production'

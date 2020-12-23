@@ -12,6 +12,7 @@ require_relative '../lib/config/dev_config'
 require_relative '../lib/config/aws_config'
 require_relative '../lib/config/gcs_config'
 
+require_relative '../lib/services/rates_fetcher'
 require_relative '../lib/services/reports_generator'
 require_relative '../lib/services/reports_uploader'
 
