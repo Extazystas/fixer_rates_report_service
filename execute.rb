@@ -25,4 +25,4 @@ Anyway::Settings.default_config_path = ->(name) { "#{BASE_PATH}/config/settings/
 # Report generation workflow:
 rates_info = RatesFetcher.call
 ReportsGenerator.new(rates_info).call
-ReportsUploader.new.call if ENV['RACK_ENV'] == 'production'
+ReportsUploader.call if ENV['RACK_ENV'] == 'production'
