@@ -4,7 +4,7 @@ class ReportsGenerator
   attr_reader :report_formats, :rates_info
 
   def initialize(rates_info, formats = DevConfig.new.report_formats)
-    @rates_info     = rates_info.sort { |rate| Date.parse(rate['date']) }.reverse
+    @rates_info     = rates_info.sort { |rate, _| Date.parse(rate['date']) }.reverse
     @report_formats = formats.uniq
   end
 

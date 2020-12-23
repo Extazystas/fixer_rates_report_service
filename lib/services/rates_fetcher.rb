@@ -4,8 +4,6 @@ require 'json'
 
 class RatesFetcher
   class << self
-    attr_reader :base_url, :base_currency, :target_currencies, :config
-
     def call
       dates_to_fetch.each_with_object([]) do |date, memo|
         response = Faraday.get("#{base_url}/#{date}", query_params, headers)

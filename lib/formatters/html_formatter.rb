@@ -27,9 +27,9 @@ module Formatters
       report_name = "html_report_#{@current_date}.html"
 
       if ENV['RACK_ENV'] == 'test'
-        File.join(File.dirname(__FILE__), "..", "..", 'spec', 'fixtures', 'reports', report_name)
+        File.join(File.dirname(__FILE__), '..', '..', 'spec', 'fixtures', 'reports', report_name)
       else
-        File.join(File.dirname(__FILE__), "..", "..", 'reports', report_name)
+        File.join(File.dirname(__FILE__), '..', '..', 'reports', report_name)
       end
     end
   end
