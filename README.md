@@ -26,7 +26,7 @@ The report is created in one or several of these formats, depending on the appli
 You can start this app with `ruby execute.rb`:
 
 ## Run tests:
-`rspec spec/`
+`RACK_ENV=test rspec spec/`
 
 ## TODO List
 - Add Sidekiq worker for scheduling application reports generation
