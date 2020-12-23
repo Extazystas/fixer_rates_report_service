@@ -20,9 +20,10 @@ The report is created in one or several of these formats, depending on the appli
 - **Rubocop** is used for a good code style. Run example: `rubocop lib`
 
 ## Tech info:
-* Ruby version 2.6
+* Ruby version 2.6.3
 
 ## Setup
+Please run `bundle install` before starting the script.
 You can start this app with `ruby execute.rb`:
 
 ## Run tests:
@@ -30,3 +31,4 @@ You can start this app with `ruby execute.rb`:
 
 ## TODO List
 - Add Sidekiq worker for scheduling application reports generation
+- Add Formatters for JSON, CSV and XLS reports
