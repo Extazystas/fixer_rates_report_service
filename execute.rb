@@ -5,6 +5,7 @@ BASE_PATH = './lib'.freeze
 end
 
 begin
+  require 'activesupport'
   require 'anyway_config'
   require 'pry'
   require 'ruby-progressbar'
@@ -14,6 +15,7 @@ rescue LoadError => e
   # Installing missed gems
   system('gem install pry')
   system('gem install rspec')
+  system('gem install activesupport')
   system('gem install anyway_config')
   system('gem install ruby-progressbar')
   puts 'Installation was completed successfully. Please re-run the program'
