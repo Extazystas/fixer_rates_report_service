@@ -23,10 +23,10 @@ RSpec.describe ReportsGenerator do
     let(:formats) { DevConfig.new(report_formats: %w[html csv xls json]).report_formats }
 
     it do
-      expect(::Formatters::HtmlFormatter).to receive(:new).with(rates_info)
-      expect(::Formatters::CsvFormatter).to receive(:new).with(rates_info)
-      expect(::Formatters::XlsFormatter).to receive(:new).with(rates_info)
-      expect(::Formatters::JsonFormatter).to receive(:new).with(rates_info)
+      expect(::Formatters::HtmlFormatter).to receive(:new).with(rates_info).and_call_original
+      expect(::Formatters::CsvFormatter).to receive(:new).with(rates_info).and_call_original
+      expect(::Formatters::XlsFormatter).to receive(:new).with(rates_info).and_call_original
+      expect(::Formatters::JsonFormatter).to receive(:new).with(rates_info).and_call_original
 
       service.call
     end
@@ -36,8 +36,8 @@ RSpec.describe ReportsGenerator do
     let(:formats) { DevConfig.new(report_formats: %w[html csv]).report_formats }
 
     it do
-      expect(::Formatters::HtmlFormatter).to receive(:new).with(rates_info)
-      expect(::Formatters::CsvFormatter).to receive(:new).with(rates_info)
+      expect(::Formatters::HtmlFormatter).to receive(:new).with(rates_info).and_call_original
+      expect(::Formatters::CsvFormatter).to receive(:new).with(rates_info).and_call_original
       expect(::Formatters::XlsFormatter).not_to receive(:new).with(rates_info)
       expect(::Formatters::JsonFormatter).not_to receive(:new).with(rates_info)
 

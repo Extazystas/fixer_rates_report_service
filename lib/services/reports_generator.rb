@@ -4,7 +4,7 @@ class ReportsGenerator
   attr_reader :report_formats, :rates_info
 
   def initialize(rates_info, formats = DevConfig.new.report_formats)
-    @rates_info     = rates_info
+    @rates_info     = rates_info.sort { |rate| Date.parse(rate['date']) }.reverse
     @report_formats = formats.uniq
   end
 
@@ -21,7 +21,7 @@ class ReportsGenerator
   def generate_report(format)
     progress_bar.log("Generating #{format} report...")
 
-    Module.const_get("::Formatters::#{format.capitalize}Formatter").new(rates_info)
+    Module.const_get("::Formatters::#{format.capitalize}Formatter").new(rates_info).call
 
     progress_bar.increment
   end

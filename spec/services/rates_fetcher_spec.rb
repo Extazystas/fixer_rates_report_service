@@ -26,15 +26,12 @@ RSpec.describe RatesFetcher do
 
   context 'good response' do
     before do
-      allow(Faraday).to receive(:get).and_call_original
-      allow(Faraday).to receive(:get)
-        .with(/#{today}/).and_return(double(body: today_response_stub.to_json))
-      allow(Faraday).to receive(:get)
-        .with(/#{yesterday}/).and_return(double(body: yersterday_response_stub.to_json))
-      allow(Faraday).to receive(:get)
-        .with(/#{week_ago}/).and_return(double(body: week_ago_response_stub.to_json))
-      allow(Faraday).to receive(:get)
-        .with(/#{year_ago}/).and_return(double(body: year_ago_response_stub.to_json))
+      allow(Faraday).to receive(:get).and_return(
+        double(body: today_response_stub.to_json),
+        double(body: yersterday_response_stub.to_json),
+        double(body: week_ago_response_stub.to_json),
+        double(body: year_ago_response_stub.to_json)
+      )
 
       allow(described_class).to receive(:dates_to_fetch).and_return(dates_to_fetch)
     end
@@ -45,7 +42,7 @@ RSpec.describe RatesFetcher do
           { 'base' => 'EUR', 'date' => today, 'symbols' => ['USD'], 'rates' => { 'USD' => 1.218658 } },
           { 'base' => 'EUR', 'date' => yesterday, 'symbols' => ['USD'], 'rates' => { 'USD' => 1.221307 } },
           { 'base' => 'EUR', 'date' => week_ago, 'symbols' => ['USD'], 'rates' => { 'USD' => 1.219818 } },
-          { 'base' => 'EUR', 'date' => '2019-12-23', 'symbols' => ['USD'], 'rates' => { 'USD' => 1.109145 } }
+          { 'base' => 'EUR', 'date' => year_ago, 'symbols' => ['USD'], 'rates' => { 'USD' => 1.109145 } }
         ]
       )
     end

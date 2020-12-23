@@ -3,4 +3,4 @@ gcs_enabled: true
 report_formats: [json, html, csv, xls]
 proxy_api_url: 'http://localhost:4567/api/v1'
 base_currency: 'EUR'
-target_currencies: [USD]
+target_currencies: [USD, GBP, DKK]

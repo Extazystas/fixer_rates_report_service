@@ -32,6 +32,7 @@ class RatesFetcher
         Date.today,
         Date.today - 1.day,
         Date.today - 1.week,
+        Date.today - 1.month,
         Date.today - 1.year
       ].map(&:to_s)
     end
