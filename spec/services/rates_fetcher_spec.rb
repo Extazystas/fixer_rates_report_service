@@ -1,11 +1,11 @@
 require 'spec_helper'
 
 RSpec.describe RatesFetcher do
-  let(:service)   { described_class.call }
-  let(:today)     { '2020-12-23' }
-  let(:yesterday) { '2020-12-22' }
-  let(:week_ago)  { '2020-12-16' }
-  let(:year_ago)  { '2019-12-23' }
+  let(:service)        { described_class.call }
+  let(:today)          { '2020-12-23' }
+  let(:yesterday)      { '2020-12-22' }
+  let(:week_ago)       { '2020-12-16' }
+  let(:year_ago)       { '2019-12-23' }
   let(:dates_to_fetch) { [today, yesterday, week_ago, year_ago] }
 
   let(:today_response_stub) do

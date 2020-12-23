@@ -6,21 +6,21 @@ RSpec.describe ReportsGenerator do
     [
       { 'base' => 'EUR',
         'date' => '2020-12-20',
-        'symbols' => ['GBP', 'USD'],
+        'symbols' => %w[GBP USD],
         'rates' => { 'GBP' => 0.911521, 'USD' => 1.221575 } },
       { 'base' => 'EUR',
         'date' => '2020-12-21',
-        'symbols' => ['GBP', 'USD'],
+        'symbols' => %w[GBP USD],
         'rates' => { 'GBP' => 0.909765, 'USD' => 1.223543 } },
       { 'base' => 'EUR',
         'date' => '2020-12-22',
-        'symbols' => ['GBP', 'USD'],
+        'symbols' => %w[GBP USD],
         'rates' => { 'GBP' => 0.913841, 'USD' => 1.221769 } }
     ]
   end
 
   context 'when all formatters enabled' do
-    let(:formats) { DevConfig.new(report_formats: ['html', 'csv', 'xls', 'json']).report_formats }
+    let(:formats) { DevConfig.new(report_formats: %w[html csv xls json]).report_formats }
 
     it do
       expect(::Formatters::HtmlFormatter).to receive(:new).with(rates_info)
@@ -33,7 +33,7 @@ RSpec.describe ReportsGenerator do
   end
 
   context 'when html and csv formatters enabled' do
-    let(:formats) { DevConfig.new(report_formats: ['html', 'csv']).report_formats }
+    let(:formats) { DevConfig.new(report_formats: %w[html csv]).report_formats }
 
     it do
       expect(::Formatters::HtmlFormatter).to receive(:new).with(rates_info)
