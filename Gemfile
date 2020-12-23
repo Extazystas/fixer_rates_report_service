@@ -6,9 +6,9 @@ gem 'anyway_config', '~> 2.0.0'
 gem 'aws-sdk-s3', '~> 1'
 gem 'faraday'
 gem 'google-cloud-storage'
-# Text progress bar for terminal
-gem 'ruby-progressbar'
 gem 'pry'
+# Text progress bar for terminal
 gem 'rspec'
+gem 'ruby-progressbar'
 # Static ruby code analyzer (linter)
 gem 'rubocop', require: false
