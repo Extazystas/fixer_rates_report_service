@@ -1,5 +1,6 @@
 module Formatters
   class CsvFormatter
-    def initialize; end
+    def initialize(rates_info)
+    end
   end
 end
