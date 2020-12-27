@@ -20,13 +20,13 @@ RSpec.describe Presenters::RatesInfoPresenter do
   end
   let(:expected_rates_info) do
     {
-      base_currencies_hash: { 'GBP' => 0.911521, 'USD' => 1.221575 },
+      base_currencies_hash: { 'GBP' => 0.913841, 'USD' => 1.221769 },
       base_currency: 'EUR',
-      base_date: '2020-12-20',
+      base_date: '2020-12-22',
       currencies: %w[GBP USD],
       rates_to_compare: [
         { 'GBP' => 0.909765, 'USD' => 1.223543, 'date' => '2020-12-21' },
-        { 'GBP' => 0.913841, 'USD' => 1.221769, 'date' => '2020-12-22' }
+        { 'GBP' => 0.911521, 'USD' => 1.221575, 'date' => '2020-12-20' }
       ]
     }
   end

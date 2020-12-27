@@ -22,11 +22,12 @@ module Presenters
     private
 
     def rates_to_compare
-      sorted_rates.drop(1).map { |info| info['rates'].merge('date' => info['date']) }
+      sorted_rates.drop(1)
+        .map { |info| info['rates'].merge('date' => info['date']) }
     end
 
     def sorted_rates
-      @sorted_rates ||= rates_info.sort { |rate, _| Date.parse(rate['date']) }.reverse
+      @sorted_rates ||= rates_info.sort_by { |rate| Date.parse(rate['date']) }.reverse
     end
   end
 end
