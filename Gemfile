@@ -12,3 +12,4 @@ gem 'rspec'
 gem 'ruby-progressbar'
 # Static ruby code analyzer (linter)
 gem 'rubocop', require: false
+gem 'write_xlsx'

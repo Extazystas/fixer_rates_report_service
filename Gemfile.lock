@@ -122,6 +122,7 @@ GEM
     ruby-next-core (0.10.5)
     ruby-progressbar (1.10.1)
     ruby2_keywords (0.0.2)
+    rubyzip (2.3.0)
     signet (0.14.0)
       addressable (~> 2.3)
       faraday (>= 0.17.3, < 2.0)
@@ -131,7 +132,12 @@ GEM
       concurrent-ruby (~> 1.0)
     uber (0.1.0)
     unicode-display_width (1.7.0)
+    write_xlsx (0.89.0)
+      rubyzip (>= 1.0.0)
+      zip-zip
     zeitwerk (2.4.2)
+    zip-zip (0.3)
+      rubyzip (>= 1.0.0)
 
 PLATFORMS
   ruby
@@ -146,6 +152,7 @@ DEPENDENCIES
   rspec
   rubocop
   ruby-progressbar
+  write_xlsx
 
 BUNDLED WITH
    2.1.4

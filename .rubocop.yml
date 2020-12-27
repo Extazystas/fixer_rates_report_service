@@ -3180,7 +3180,7 @@ Style/MixinGrouping:
 
 Style/MixinUsage:
   Description: 'Checks that `include`, `extend` and `prepend` exists at the top level.'
-  Enabled: true
+  Enabled: false
   VersionAdded: '0.51'
 
 Style/ModuleFunction:

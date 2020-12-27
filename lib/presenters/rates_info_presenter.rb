@@ -22,7 +22,8 @@ module Presenters
     private
 
     def rates_to_compare
-      sorted_rates.drop(1)
+      sorted_rates
+        .drop(1)
         .map { |info| info['rates'].merge('date' => info['date']) }
     end
 
