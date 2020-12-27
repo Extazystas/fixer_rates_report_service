@@ -12,11 +12,15 @@ module Formatters
 
     def call
       File.open(target_report_file(@base_date, 'html'), 'w') do |f|
-        f.write ERB.new(File.read(template_file)).result(binding)
+        f.write build_report
       end
     end
 
     private
+
+    def build_report
+      ERB.new(File.read(template_file)).result(binding)
+    end
 
     def template_file
       File.join(File.dirname(__FILE__), '..', 'templates', 'html_report.html.erb')

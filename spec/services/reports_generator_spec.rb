@@ -5,7 +5,7 @@ RSpec.describe ReportsGenerator do
   let(:rates_info) do
     [
       { 'base' => 'EUR',
-        'date' => '2020-12-20',
+        'date' => '2020-12-15',
         'symbols' => %w[GBP USD],
         'rates' => { 'GBP' => 0.911521, 'USD' => 1.221575 } },
       { 'base' => 'EUR',
