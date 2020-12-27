@@ -3,12 +3,11 @@ require 'erb'
 module Formatters
   class HtmlFormatter
     def initialize(rates_info)
-      current_rate_info = rates_info.first
-      @current_date     = current_rate_info['date']
-      @base_currency    = current_rate_info['base']
-      @current_rates    = current_rate_info['rates']
-      @currencies       = @current_rates.keys
-      @comparable_rates = rates_info.drop(1)
+      @currencies           = rates_info[:currencies]
+      @base_date            = rates_info[:base_date]
+      @base_currency        = rates_info[:base_currency]
+      @base_currencies_hash = rates_info[:base_currencies_hash]
+      @rates_to_compare     = rates_info[:rates_to_compare]
     end
 
     def call
@@ -24,7 +23,7 @@ module Formatters
     end
 
     def target_report_file
-      report_name = "html_report_#{@current_date}.html"
+      report_name = "html_report_#{@base_date}.html"
 
       if ENV['RACK_ENV'] == 'test'
         File.join(File.dirname(__FILE__), '..', '..', 'spec', 'fixtures', 'reports', report_name)

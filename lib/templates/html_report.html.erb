@@ -51,17 +51,17 @@
 
           <tbody>
             <tr>
-              <td><%= @current_date %></td>
-              <% @current_rates.each do |_, val| %>
+              <td><%= @base_date %></td>
+              <% @base_currencies_hash.each_value do |val| %>
                 <td><%= val %></td>
               <% end %>
             </tr>
 
-            <% @comparable_rates.each do |rate_info| %>
+            <% @rates_to_compare.each do |rate_info| %>
               <tr>
                 <td><%= rate_info['date'] %></td>
-                <% rate_info['rates'].each do |currency, val| %>
-                  <td><%= (val - @current_rates[currency]).round(6) %></td>
+                <% @currencies.each do |currency| %>
+                  <td><%= (rate_info[currency] - @base_currencies_hash[currency]).round(5) %></td>
                 <% end %>
               </tr>
             <% end %>

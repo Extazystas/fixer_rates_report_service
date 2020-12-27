@@ -1,11 +1,11 @@
 BASE_PATH = './lib'.freeze
 
-%w[services formatters config uploaders].each do |dir|
+%w[services formatters presenters config uploaders].each do |dir|
   Dir["#{BASE_PATH}/#{dir}/*.rb"].each { |file| require_relative file }
 end
 
 begin
-  require 'activesupport'
+  require 'active_support/core_ext/integer/time'
   require 'anyway_config'
   require 'pry'
   require 'ruby-progressbar'

@@ -26,6 +26,8 @@ require_relative '../lib/formatters/json_formatter'
 require_relative '../lib/formatters/xls_formatter'
 require_relative '../lib/formatters/csv_formatter'
 
+require_relative '../lib/presenters/rates_info_presenter'
+
 begin
   require 'pry'
   require 'rspec'
