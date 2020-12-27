@@ -28,6 +28,10 @@ require_relative '../lib/formatters/csv_formatter'
 
 require_relative '../lib/presenters/rates_info_presenter'
 
+require_relative '../lib/helpers/rates_report_helper'
+
+include ::RatesReportHelper
+
 begin
   require 'pry'
   require 'rspec'

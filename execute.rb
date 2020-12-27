@@ -1,8 +1,10 @@
 BASE_PATH = './lib'.freeze
 
-%w[services formatters presenters config uploaders].each do |dir|
+%w[services formatters presenters config uploaders helpers].each do |dir|
   Dir["#{BASE_PATH}/#{dir}/*.rb"].each { |file| require_relative file }
 end
+
+include ::RatesReportHelper
 
 begin
   require 'active_support/core_ext/integer/time'
@@ -10,6 +12,7 @@ begin
   require 'pry'
   require 'ruby-progressbar'
   require 'rspec'
+  require 'write_xlsx'
 rescue LoadError => e
   puts "#{e}. Installing..."
   # Installing missed gems
@@ -18,6 +21,7 @@ rescue LoadError => e
   system('gem install activesupport')
   system('gem install anyway_config')
   system('gem install ruby-progressbar')
+  system('gem install write_xlsx')
   puts 'Installation was completed successfully. Please re-run the program'
   exit
 end

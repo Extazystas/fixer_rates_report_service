@@ -11,7 +11,7 @@ module Formatters
     end
 
     def call
-      File.open(target_report_file, 'w') do |f|
+      File.open(target_report_file(@base_date, 'html'), 'w') do |f|
         f.write ERB.new(File.read(template_file)).result(binding)
       end
     end
@@ -20,16 +20,6 @@ module Formatters
 
     def template_file
       File.join(File.dirname(__FILE__), '..', 'templates', 'html_report.html.erb')
-    end
-
-    def target_report_file
-      report_name = "html_report_#{@base_date}.html"
-
-      if ENV['RACK_ENV'] == 'test'
-        File.join(File.dirname(__FILE__), '..', '..', 'spec', 'fixtures', 'reports', report_name)
-      else
-        File.join(File.dirname(__FILE__), '..', '..', 'reports', report_name)
-      end
     end
   end
 end
