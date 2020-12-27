@@ -14,7 +14,7 @@ For a given it calculates the value and delta for:
  - today vs 1 year ago
 
 You can add and remove any currency supported by Fixer to the report via app configuration.
-The application supports the following output formats: HTML, XLS, ~CSV, JSON~.
+The application supports the following output formats: HTML, XLS, CSV, ~JSON~.
 The report is created in one or several of these formats, depending on the applications configuration.
 
 - Units specs written with `Rspec`.
@@ -36,4 +36,4 @@ You can start this app with `ruby execute.rb`:
 
 ## TODO List
 - Add Sidekiq worker for scheduling application reports generation
-- Add Formatters for JSON and CSV reports
+- Add Formatter for JSON reports
